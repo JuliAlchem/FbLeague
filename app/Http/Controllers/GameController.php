@@ -14,7 +14,8 @@ class GameController extends Controller
      */
     public function index()
     {
-        return view('game.index');
+        $games = Game::all();
+        return view("game.index")->with("games", $games);
     }
 
     /**
@@ -24,7 +25,7 @@ class GameController extends Controller
      */
     public function create()
     {
-        //
+        return view("game.create");
     }
 
     /**
@@ -35,7 +36,18 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $games = new Game();
+
+        
+        
+        $games->date = $request->get("date");
+        $games->result = $request->get("result");
+
+        $games->save();
+
+        return redirect("/games");
+
+      
     }
 
     /**
@@ -57,7 +69,8 @@ class GameController extends Controller
      */
     public function edit($id)
     {
-        //
+        $game = Game::find($id);
+        return view("game.edit")->with("game", $game);
     }
 
     /**
@@ -69,7 +82,16 @@ class GameController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $game = Game::find($id);
+
+        
+
+        $game->date = $request->get("date");
+        $game->result = $request->get("result");
+
+        $game->save();
+
+        return redirect("/games");
     }
 
     /**
@@ -80,6 +102,8 @@ class GameController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $game = Game::find($id);
+        $game->delete();
+        return redirect("/games");
     }
 }

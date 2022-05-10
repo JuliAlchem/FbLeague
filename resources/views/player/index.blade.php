@@ -3,9 +3,9 @@
 
 <div class="container max-w-7xl mx-auto mt-8">
   <div class="mb-4">
-    <h1 class="font-serif text-3xl font-bold underline decoration-gray-400"> Post Index</h1>
+    <h1 class="font-serif text-3xl font-bold underline decoration-gray-400">Players</h1>
     <div class="flex justify-end">
-      <a href="players/create" class="px-4 py-2 rounded-md bg-sky-500 text-sky-100 hover:bg-sky-600">Create Post</a>
+      <a href="players/create" class="px-4 py-2 rounded-md bg-sky-500 text-sky-100 hover:bg-sky-600">Create Player</a>
     </div>
   </div>
 
@@ -76,7 +76,7 @@
 
               </td>
               <td class="text-sm font-medium leading-5 whitespace-no-wrap border-b border-gray-200 ">
-                <button type="" submit><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-600 hover:text-red-800"
+                <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-600 hover:text-red-800"
                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
