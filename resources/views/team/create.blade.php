@@ -1,5 +1,5 @@
 @extends("dashboard")
-@section("content")
+@section("crud")
 
 <!-- Create Post -->
 <div>

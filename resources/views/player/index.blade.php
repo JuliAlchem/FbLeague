@@ -1,5 +1,5 @@
 @extends("dashboard")
-@section("content")
+@section("crud")
 
 <div class="container max-w-7xl mx-auto mt-8">
   <div class="mb-4">
