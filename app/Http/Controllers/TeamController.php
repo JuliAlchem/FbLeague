@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Team;
 class TeamController extends Controller
 {
     /**
@@ -13,7 +13,9 @@ class TeamController extends Controller
      */
     public function index()
     {
-        //
+        $teams = Team::all();
+        return view("team.index")->with("teams", $teams);
+        
     }
 
     /**
@@ -23,7 +25,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        //
+        return view("team.create");
     }
 
     /**
@@ -34,7 +36,16 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $teams = new Team();
+        $teams->name = $request->get("name");
+        $teams->played = $request->get("played");
+        $teams->won = $request->get("won");
+        $teams->drawn = $request->get("drawn");
+        $teams->lost = $request->get("lost");
+        $teams->points = $request->get("points");
+        $teams->save();
+
+        return redirect("/teams");
     }
 
     /**
@@ -56,7 +67,8 @@ class TeamController extends Controller
      */
     public function edit($id)
     {
-        //
+        $team = Team::find($id);
+        return view("team.edit")->with("team", $team);
     }
 
     /**
@@ -68,7 +80,18 @@ class TeamController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $team = Team::find($id);
+
+        $team->name = $request->get("name");
+        $team->played = $request->get("played");
+        $team->won = $request->get("won");
+        $team->drawn = $request->get("drawn");
+        $team->lost = $request->get("lost");
+        $team->points = $request->get("points");
+
+        $team->save();
+
+        return redirect("/teams");
     }
 
     /**
@@ -79,6 +102,8 @@ class TeamController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $team = Team::find($id);
+        $team->delete();
+        return redirect("/teams");
     }
 }

@@ -14,7 +14,11 @@
     <link href="{{ asset('css/all.css') }}" rel="stylesheet">
 </head>
 <body>
+    
+
     @yield('content')
+
+
 <script>
 var sidebar = document.getElementById('sidebar');
 function sidebarToggle() {

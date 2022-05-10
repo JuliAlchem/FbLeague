@@ -1,11 +1,11 @@
-@extends("layouts.startpage")
-@section("playerIndex")
+@extends("dashboard")
+@section("content")
 
 <div class="container max-w-7xl mx-auto mt-8">
   <div class="mb-4">
-    <h1 class="font-serif text-3xl font-bold underline decoration-gray-400"> Post Index</h1>
+    <h1 class="font-serif text-3xl font-bold underline decoration-gray-400"> Teams </h1>
     <div class="flex justify-end">
-      <a href="players/create" class="px-4 py-2 rounded-md bg-sky-500 text-sky-100 hover:bg-sky-600">Create Post</a>
+      <a href="teams/create" class="px-4 py-2 rounded-md bg-sky-500 text-sky-100 hover:bg-sky-600">Create Team</a>
     </div>
   </div>
 
@@ -20,13 +20,19 @@
                 Name</th>
               <th
                 class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                Team</th>
+                Played</th>
               <th
                 class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                Position</th>
+                Won</th>
               <th
                 class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                Goals</th>
+                Drawn</th>
+              <th
+                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                Lost</th>
+              <th
+                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                Points</th>
               <th class="px-6 py-3 text-sm text-left text-gray-500 border-b border-gray-200 bg-gray-50" colspan="3">
                 Action</th>
             </tr>
@@ -34,36 +40,48 @@
 
           <tbody class="bg-white">
 
-          @foreach($players as $player)
+          @foreach($teams as $team)
 
           <tr>
           <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                 <div class="flex items-center">
-                  {{ $player->name}}
+                  {{ $team->name}}
                 </div>
               </td>
 
               <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                 <div class="flex items-center">
-                  {{ $player->team}}
+                  {{ $team->played}}
                 </div>
               </td>
 
               <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                 <div class="flex items-center">
-                  {{ $player->position}}
+                  {{ $team->won}}
                 </div>
               </td>
               <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                 <div class="flex items-center">
-                  {{ $player->goals}}
+                  {{ $team->drown}}
+                </div>
+              </td> 
+
+              <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                <div class="flex items-center">
+                  {{ $team->lost}}
+                </div>
+              </td> 
+
+              <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                <div class="flex items-center">
+                  {{ $team->points}}
                 </div>
               </td> 
               
 
-              <form action="{{ route ('players.destroy', $player->id) }}" method="POST">
+              <form action="{{ route ('teams.destroy', $team->id) }}" method="POST">
               <td class="text-sm font-medium leading-5 text-center whitespace-no-wrap border-b border-gray-200 ">
-                <a href="/players/{{$player->id}}/edit" class="text-indigo-600 hover:text-indigo-900">
+                <a href="/teams/{{$team->id}}/edit" class="text-indigo-600 hover:text-indigo-900">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

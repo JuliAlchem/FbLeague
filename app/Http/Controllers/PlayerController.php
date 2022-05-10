@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Player;
 
 class PlayerController extends Controller
 {
@@ -13,7 +14,8 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        //
+        $players = Player::all();
+        return view("player.index")->with("players", $players);
     }
 
     /**
@@ -23,7 +25,7 @@ class PlayerController extends Controller
      */
     public function create()
     {
-        //
+        return view("player.create");
     }
 
     /**
@@ -34,7 +36,17 @@ class PlayerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $players = new Player();
+
+        
+        $players->name = $request->get("name");
+        $players->team = $request->get("team");
+        $players->position = $request->get("position");
+        $players->goals = $request->get("goals");
+
+        $players->save();
+
+        return redirect("/players");
     }
 
     /**
@@ -56,7 +68,8 @@ class PlayerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $player = Player::find($id);
+        return view("player.edit")->with("player", $player);
     }
 
     /**
@@ -68,7 +81,17 @@ class PlayerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $player = Player::find($id);
+
+        
+        $player->name = $request->get("name");
+        $player->team = $request->get("team");
+        $player->position = $request->get("position");
+        $player->goals = $request->get("goals");
+
+        $player->save();
+
+        return redirect("/players");
     }
 
     /**
@@ -79,6 +102,8 @@ class PlayerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $player = Player::find($id);
+        $player->delete();
+        return redirect("/players");
     }
 }

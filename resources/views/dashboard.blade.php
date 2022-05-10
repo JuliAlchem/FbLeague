@@ -43,7 +43,7 @@
                     </li>
                
                     <li class="w-full h-full py-3 px-2">
-                        <a href="#"
+                        <a href="/players"
                            class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
                             <i class="far fa-user float-left mx-2"></i>
                             Players
@@ -51,14 +51,14 @@
                         </a>
                         <ul class="list-reset -mx-2 bg-white-medium-dark">
                             <li class="border-t mt-2 border-light-border w-full h-full px-2 py-3">
-                                <a href="/login"
+                                <a href="/teams"
                                    class="mx-4 font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
                                     Teams
                                     <span><i class="fa fa-angle-right float-right"></i></span>
                                 </a>
                             </li>
                             <li class="border-t border-light-border w-full h-full px-2 py-3">
-                                <a href="/register"
+                                <a href="/games"
                                    class="mx-4 font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
                                     Games
                                     <span><i class="fa fa-angle-right float-right"></i></span>
@@ -74,7 +74,8 @@
             <!--Main-->
             <main class="bg-white-300 flex-1 p-3 overflow-hidden">
                 
-                   
+                
+            
             </main>
             <!--/Main-->
         </div>

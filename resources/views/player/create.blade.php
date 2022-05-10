@@ -1,5 +1,5 @@
-@extends("layouts.startpage")
-@section("playerIndex")
+@extends("dashboard")
+@section("content")
 
 <!-- Create Post -->
 <div>

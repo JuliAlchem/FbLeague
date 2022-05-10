@@ -1,5 +1,5 @@
-@extends("layouts.startpage")
-@section("playerIndex")
+@extends("dashboard")
+@section("content")
 
 <!-- Create Post -->
 <div>
@@ -12,7 +12,7 @@
           </div>
 
           <div class="w-full px-6 py-4 bg-white rounded shadow-md ring-1 ring-gray-900/10">
-            <form method="POST" action="/players/{{$player->id}}">
+            <form method="POST" action="/teams/{{$team->id}}">
                 @csrf
                 @method("PUT")
               <!-- Name -->
@@ -23,41 +23,62 @@
 
                 <input
                   class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  type="name" name="name" value="{{$player->name}}" />
+                  type="name" name="name" value="{{$team->name}}" />
               </div>
 
               
-              <!-- Team -->
+              <!-- Played -->
+
               <div>
                 <label class="block text-sm font-bold text-gray-700" for="title">
-                  Team
+                Played
                 </label>
 
                 <input
                   class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  type="text" name="team" value="{{$player->team}}" />
+                  type="number" name="played" value="{{$team->played}}" />
+              </div>
+             <!-- Won -->
+
+             <div>
+                <label class="block text-sm font-bold text-gray-700" for="title">
+                Won
+                </label>
+
+                <input
+                  class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                   type="number" name="won" value="{{$team->won}}" />
               </div>
 
-              <!-- Position -->
-              <div>
+             <!-- Drawn -->
+             <div>
                 <label class="block text-sm font-bold text-gray-700" for="title">
-                    Position
+                Drawn
                 </label>
 
                 <input
                   class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  type="text" name="position" value="{{$player->position}}" />
+                   type="number" name="drawn" value="{{$team->drawn}}" />
               </div>
-
-              <!-- Goals -->
+              <!-- Lost -->
               <div>
                 <label class="block text-sm font-bold text-gray-700" for="title">
-                    Goals
+                Lost
                 </label>
 
                 <input
                   class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                   type="number" name="goals" value="{{$player->goals}}" />
+                   type="number" name="lost" value="{{$team->lost}}" />
+              </div>
+              <!-- Points -->
+              <div>
+                <label class="block text-sm font-bold text-gray-700" for="title">
+                Points
+                </label>
+
+                <input
+                  class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                   type="number" name="points" value="{{$team->points}}" />
               </div>
               
               
@@ -67,7 +88,7 @@
                   class="px-6 py-2 text-sm font-semibold rounded-md shadow-md text-sky-100 bg-sky-500 hover:bg-sky-700 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300">
                   Save
                 </button>
-                <a href="/players"
+                <a href="/teams"
                   class="px-6 py-2 text-sm font-semibold text-gray-100 bg-gray-400 rounded-md shadow-md hover:bg-gray-600 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300">
                   Cancel
                 </a>
