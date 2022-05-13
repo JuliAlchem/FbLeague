@@ -7,7 +7,7 @@
         <div class="w-full px-16 py-20 mt-6 overflow-hidden bg-white rounded-lg lg:max-w-4xl">
           <div class="mb-4">
             <h1 class="font-serif text-3xl font-bold underline decoration-gray-400">
-              Create Post
+              Create new player
             </h1>
           </div>
 
@@ -18,24 +18,24 @@
               <!-- Name -->
               <div>
                 <label class="block text-sm font-bold text-gray-700" for="title">
-                  Name
+                  User_id
                 </label>
 
                 <input
                   class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  type="name" name="name" value="{{$player->name}}" />
+                  type="number" name="user_id" value="{{$player->user_id}}" />
               </div>
 
               
               <!-- Team -->
               <div>
                 <label class="block text-sm font-bold text-gray-700" for="title">
-                  Team
+                  Team_id
                 </label>
 
                 <input
                   class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  type="text" name="team" value="{{$player->team}}" />
+                  type="number" name="team_id" value="{{$player->team_id}}" />
               </div>
 
               <!-- Position -->

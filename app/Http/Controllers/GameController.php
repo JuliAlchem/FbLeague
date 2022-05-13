@@ -41,7 +41,10 @@ class GameController extends Controller
         
         
         $games->date = $request->get("date");
-        $games->result = $request->get("result");
+        $games->team1 = $request->get("team1_id");
+        $games->team1_result = $request->get("team1_result");
+        $games->team2 = $request->get("team2_id");
+        $games->team2_result = $request->get("team2_result");
 
         $games->save();
 
@@ -87,7 +90,10 @@ class GameController extends Controller
         
 
         $game->date = $request->get("date");
-        $game->result = $request->get("result");
+        $game->team1 = $request->get("team1_id");
+        $game->team1_result = $request->get("team1_result");
+        $game->team2 = $request->get("team2_id");
+        $game->team2_result = $request->get("team2_result");
 
         $game->save();
 

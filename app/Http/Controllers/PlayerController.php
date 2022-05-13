@@ -39,8 +39,8 @@ class PlayerController extends Controller
         $players = new Player();
 
         
-        $players->name = $request->get("name");
-        $players->team = $request->get("team");
+        $players->name = $request->get("user_id");
+        $players->team = $request->get("team_id");
         $players->position = $request->get("position");
         $players->goals = $request->get("goals");
 
@@ -84,8 +84,8 @@ class PlayerController extends Controller
         $player = Player::find($id);
 
         
-        $player->name = $request->get("name");
-        $player->team = $request->get("team");
+        $player->name = $request->get("user_id");
+        $player->team = $request->get("team_id");
         $player->position = $request->get("position");
         $player->goals = $request->get("goals");
 

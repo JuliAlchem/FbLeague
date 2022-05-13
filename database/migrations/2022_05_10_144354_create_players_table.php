@@ -18,11 +18,12 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             
-            $table->string("name");
+            $table->unsignedBigInteger("user_id");
             $table->unsignedBigInteger("team_id");
             $table->string("position");
             $table->integer("goals");
 
+            $table->foreign("user_id")->references('id')->on('users')->onDelete('cascade');
             $table->foreign("team_id")->references('id')->on('teams')->onDelete('cascade');
             
         });

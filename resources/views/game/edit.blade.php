@@ -27,7 +27,16 @@
               </div>
 
               
-              <!-- Result -->
+              <!-- Team 1 -->
+              <div>
+                <label class="block text-sm font-bold text-gray-700" for="title">
+                  Team 1 
+                </label>
+
+                <input
+                  class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  type="number" name="team1_id" value="{{$game->team1_id}}" />
+              </div>
               <div>
                 <label class="block text-sm font-bold text-gray-700" for="title">
                   Result
@@ -35,7 +44,28 @@
 
                 <input
                   class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  type="number" name="result" value="{{$game->result}}" />
+                  type="number" name="team1_result" value="{{$game->team1_result}}" />
+              </div>
+
+              <!-- Team 2 -->
+              <div>
+                <label class="block text-sm font-bold text-gray-700" for="title">
+                  Team 2
+                </label>
+
+                <input
+                  class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  type="number" name="team2_id" value="{{$game->team2_id}}" />
+              </div>
+
+              <div>
+                <label class="block text-sm font-bold text-gray-700" for="title">
+                  Result
+                </label>
+
+                <input
+                  class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  type="number" name="team2_result" value="{{$game->team2_result}}" />
               </div>
 
               <div class="flex items-center justify-start mt-4 gap-x-2">

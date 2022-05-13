@@ -31,7 +31,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-/* new login/register/dash */
+/* new login/register/dash 
 Route::get('/', function () {
     return view('dashboard');
 });
@@ -41,3 +41,5 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 });
+
+*/

@@ -17,12 +17,12 @@
               <!-- Name -->
               <div>
                 <label class="block text-sm font-bold text-gray-700" for="title">
-                  Name
+                  Team_id
                 </label>
 
                 <input
                   class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  type="name" name="name" />
+                  type="number" name="team_id" />
               </div>
 
               

@@ -18,8 +18,12 @@ return new class extends Migration
             $table->timestamps();
 
             $table->date('date');
-            $table->integer("result");
-            
+            $table->unsignedBigInteger("team1_id");
+            $table->integer("team1_result");
+            $table->unsignedBigInteger("team2_id");
+            $table->integer("team2_result");
+            $table->foreign("team1_id")->references('id')->on('teams')->onDelete('cascade');
+            $table->foreign("team2_id")->references('id')->on('teams')->onDelete('cascade');
         });
     }
 
