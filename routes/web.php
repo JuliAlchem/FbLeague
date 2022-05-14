@@ -17,10 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*
 Route::resource('players','App\Http\Controllers\PlayerController');
 Route::resource('teams','App\Http\Controllers\TeamController');
 Route::resource('games','App\Http\Controllers\GameController');
-
+*/
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

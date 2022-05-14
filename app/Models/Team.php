@@ -9,6 +9,8 @@ class Team extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name','played','won','drawn','lost','points'];
+
      //Uno a muchos
 
      public function players(){

@@ -9,7 +9,7 @@ use App\Models\Team;
 class Game extends Model
 {
     use HasFactory;
-
+    protected $fillable = ['team1_id','team1_result','team2_id','team2_result','date'];
     // Muchos a muchos
 
     public function teams(){

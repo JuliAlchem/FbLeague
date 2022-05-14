@@ -11,6 +11,8 @@ class Player extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['user_id','team_id','position','goals'];
+
     //Uno a muchos inversa 
     public function team(){
         return $this->belongsTo(Team::class);
