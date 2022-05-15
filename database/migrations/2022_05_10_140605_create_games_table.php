@@ -24,8 +24,9 @@ return new class extends Migration
             $table->integer("team2_result");
             $table->date('date');
             
-            $table->foreign("team1_id")->references('id')->on('teams')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign("team2_id")->references('id')->on('teams')->onDelete('cascade')->onUpdate('cascade');
+            
+            $table->foreign("team1_id")->references('id')->on('teams');
+            $table->foreign("team2_id")->references('id')->on('teams');
         });
     }
 

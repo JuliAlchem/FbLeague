@@ -48,7 +48,7 @@ class PlayerController extends Controller
         $player = Player::create($request->all());
         
 
-        return redirect()->route("admin.players.edit", $player )->with('info', 'New player has been created successfully!');
+        return redirect()->route("admin.players.index", $player )->with('info', 'New player has been created successfully!');
     }
 
     /**
@@ -92,7 +92,7 @@ class PlayerController extends Controller
 
         $player->update($request->all());
 
-        return redirect()->route("admin.players.edit", $player )->with('info', 'Player has been updated successfully!');
+        return redirect()->route("admin.players.index", $player )->with('info', 'Player has been updated successfully!');
     }
 
     /**

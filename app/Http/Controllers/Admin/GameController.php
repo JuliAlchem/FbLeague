@@ -48,7 +48,7 @@ class GameController extends Controller
         $game = Game::create($request->all());
         
 
-        return redirect()->route("admin.games.edit", $game )->with('info', 'New game has been created successfully!');
+        return redirect()->route("admin.games.index", $game )->with('info', 'New game has been created successfully!');
     }
     
 
@@ -94,7 +94,7 @@ class GameController extends Controller
         $game->update($request->all());
         
 
-        return redirect()->route("admin.games.edit", $game )->with('info', 'Game has been updated successfully!');
+        return redirect()->route("admin.games.index", $game )->with('info', 'Game has been updated successfully!');
     }
     
 

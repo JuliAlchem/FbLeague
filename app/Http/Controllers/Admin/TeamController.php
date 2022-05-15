@@ -50,7 +50,7 @@ class TeamController extends Controller
         $team = Team::create($request->all());
         
 
-        return redirect()->route("admin.teams.edit", $team )->with('info', 'New team has been created successfully!');
+        return redirect()->route("admin.teams.index", $team )->with('info', 'New team has been created successfully!');
     }
 
     /**
@@ -95,7 +95,7 @@ class TeamController extends Controller
 
         $team->update($request->all());
 
-        return redirect()->route("admin.teams.edit", $team )->with('info', 'Team has been updated successfully!');
+        return redirect()->route("admin.teams.index", $team )->with('info', 'Team has been updated successfully!');
     }
 
     /**

@@ -20,6 +20,23 @@ class RoleSeeder extends Seeder
        $roleAdm = Role::create(['name' => 'Admin']);
        $roleVisit = Role::create(['name' => 'Visitor']);
 
-        Permission::create(['name' => '']);
+        Permission::create(['name' => 'admin.home'])->syncRoles([$roleAdm, $roleVisit]);
+        /* Players */
+        Permission::create(['name' => 'admin.players.index'])->syncRoles([$roleAdm, $roleVisit]);
+        Permission::create(['name' => 'admin.players.create'])->syncRoles([$roleAdm, $roleVisit]);
+        Permission::create(['name' => 'admin.players.edit'])->syncRoles([$roleAdm, $roleVisit]);
+        Permission::create(['name' => 'admin.players.destroy'])->syncRoles([$roleAdm, $roleVisit]);
+        /* Teams */
+        Permission::create(['name' => 'admin.teams.index'])->syncRoles([$roleAdm, $roleVisit]);
+        Permission::create(['name' => 'admin.teams.create'])->syncRoles([$roleAdm, $roleVisit]);
+        Permission::create(['name' => 'admin.teams.edit'])->syncRoles([$roleAdm, $roleVisit]);
+        Permission::create(['name' => 'admin.teams.destroy'])->syncRoles([$roleAdm, $roleVisit]);
+        /* Games */
+        Permission::create(['name' => 'admin.games.index'])->syncRoles([$roleAdm, $roleVisit]);
+        Permission::create(['name' => 'admin.games.create'])->syncRoles([$roleAdm, $roleVisit]);
+        Permission::create(['name' => 'admin.games.edit'])->syncRoles([$roleAdm, $roleVisit]);
+        Permission::create(['name' => 'admin.games.destroy'])->syncRoles([$roleAdm, $roleVisit]);
+
+        
     }
 }

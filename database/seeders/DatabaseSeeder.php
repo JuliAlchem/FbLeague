@@ -16,9 +16,11 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {   
+        $this->call(RoleSeeder::class);
+
         $this->call(UserSeeder::class);
-        
+
         Team::factory(10)->create();
         Player::factory(45)->create();
         Game::factory(15)->create();

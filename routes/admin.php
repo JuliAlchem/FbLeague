@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\Admin\GameController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\PlayerController;
 use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Admin\GameController;
 
 Route::get('', [HomeController::class, 'index'])->name('admin.home');
 Route::resource('players',PlayerController::class)->names('admin.players'); 

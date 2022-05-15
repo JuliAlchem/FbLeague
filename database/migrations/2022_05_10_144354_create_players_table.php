@@ -23,8 +23,8 @@ return new class extends Migration
             $table->string("position");
             $table->integer("goals");
 
-            $table->foreign("user_id")->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign("team_id")->references('id')->on('teams')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign("user_id")->references('id')->on('users');
+            $table->foreign("team_id")->references('id')->on('teams');
             
         });
     }
