@@ -24,10 +24,10 @@
                 <ul class="list-reset flex flex-col">
                     
                 <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
-                        <a href="{{ route('admin.home') }}"
+                        <a href="{{ route('admin.users.index') }}"
                            class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                            <i class="fas fa-tachometer-alt float-left mx-2"></i>
-                            Dashboard
+                            <i class="far fa-user float-left mx-2"></i>
+                            Users
                             <span><i class="fas fa-angle-right float-right"></i></span>
                         </a>
                     </li>

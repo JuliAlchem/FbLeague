@@ -21,6 +21,10 @@ class RoleSeeder extends Seeder
        $roleVisit = Role::create(['name' => 'Visitor']);
 
         Permission::create(['name' => 'admin.home'])->syncRoles([$roleAdm, $roleVisit]);
+        /* Users */
+        Permission::create(['name' => 'admin.users.index'])->syncRoles([$roleAdm]);
+        Permission::create(['name' => 'admin.users.update'])->syncRoles([$roleAdm]);
+        Permission::create(['name' => 'admin.users.edit'])->syncRoles([$roleAdm]);
         /* Players */
         Permission::create(['name' => 'admin.players.index'])->syncRoles([$roleAdm, $roleVisit]);
         Permission::create(['name' => 'admin.players.create'])->syncRoles([$roleAdm, $roleVisit]);

@@ -86,7 +86,7 @@
                   Cancel
                 </a>
            </div>
-            
+           {!! Form::close() !!} 
           </div>
         </div>
       </div>
