@@ -12,7 +12,7 @@ class Game extends Model
     protected $fillable = ['team1_id','team1_result','team2_id','team2_result','date'];
     // Muchos a muchos
 
-    public function teams(){
-        return $this->belongsToMany(Team::class);
+    public function team(){
+        return $this->belongsTo(Team::class);
     }
 }
