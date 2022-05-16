@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\TeamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,10 +15,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
+Route::get('/', function(){ 
     return view('welcome');
 });
+/*Route::get('/', [PlayerController::class, 'index'])->name('players.index'); */
+ /*Route::get('/', [GameController::class, 'index'])->name('games.index'); */
+
+
+Route::resource('players','App\Http\Controllers\PlayerController');
+Route::resource('teams','App\Http\Controllers\TeamController');
+Route::resource('games','App\Http\Controllers\GameController');
 
 Route::middleware([
     'auth:sanctum',
@@ -27,7 +36,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-/* new login/register/dash */
+/* new login/register/dash 
 Route::get('/', function () {
     return view('dashboard');
 });
@@ -37,3 +46,5 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 });
+
+*/
