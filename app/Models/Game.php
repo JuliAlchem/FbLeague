@@ -10,9 +10,18 @@ class Game extends Model
 {
     use HasFactory;
     protected $fillable = ['team1_id','team1_result','team2_id','team2_result','date'];
-    // Muchos a muchos
-
-    public function team(){
-        return $this->belongsTo(Team::class);
+    
+/*
+    public function teams(){
+        return $this->hasMany(Team::class);
     }
+*/
+    public function team1(){
+        return $this->hasMany(Team::class, 'team1_id'); 
+    }
+
+    public function team2(){
+        return $this->hasMany(Team::class, 'team2_id'); 
+    }
+
 }

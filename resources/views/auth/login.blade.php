@@ -18,7 +18,7 @@
         @endif
 
 
-        <form class=" max-w-xl m-4 p-10 bg-white rounded shadow-xl" method="POST" action="{{ route('login') }}">
+        <form class=" max-w-xl m-4 py-4 px-4 p-10 bg-white rounded shadow-xl" method="POST" action="{{ route('login') }}">
             @csrf
             <div class="">
             <div>
@@ -38,7 +38,7 @@
                 </label>
             </div>
 
-            <div class="flex mt-4 items-center justify-between">
+            <div class="flex mt-4 justify-between">
                 @if (Route::has('password.request'))
                     <a class="inline-block right-0 align-baseline font-bold text-sm text-500 hover:text-blue-800" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
